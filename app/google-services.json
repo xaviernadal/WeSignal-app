@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "1093096365500",
+    "project_id": "wesignal-b1866",
+    "storage_bucket": "wesignal-b1866.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1093096365500:android:364b27ea2a0f07f71a5fb9",
+        "android_client_info": {
+          "package_name": "xaviernadalreales.com.wesignal"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1093096365500-sbeck07uvrksranji0btjia2e98djteb.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDYBfd0-DZm_2xMRZwpUl0RWW0ch6mV6ww"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1093096365500-sbeck07uvrksranji0btjia2e98djteb.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
