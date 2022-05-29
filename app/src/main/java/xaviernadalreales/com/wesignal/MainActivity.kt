@@ -1,18 +1,20 @@
 package xaviernadalreales.com.wesignal
 
-import androidx.appcompat.app.AppCompatActivity
+
 import android.os.Bundle
-import xaviernadalreales.com.wesignal.ui.main.MainFragment
+
+import androidx.appcompat.app.AppCompatActivity
+
+import xaviernadalreales.com.wesignal.databinding.ActivityMainBinding
+
 
 class MainActivity : AppCompatActivity() {
+    private lateinit var viewBinding: ActivityMainBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
-        if (savedInstanceState == null) {
-            supportFragmentManager.beginTransaction()
-                .replace(R.id.container, MainFragment.newInstance())
-                .commitNow()
-        }
+        viewBinding = ActivityMainBinding.inflate(layoutInflater)
+        setContentView(viewBinding.root)
     }
 }
+
