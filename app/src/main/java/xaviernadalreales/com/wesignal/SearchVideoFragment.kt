@@ -13,7 +13,7 @@ class SearchVideoFragment : Fragment() {
     ): View? {
         // Inflate the layout for this fragment
 
-        val view = inflater.inflate(R.layout.video_search_fragment_layout, container, false)
+        val view = inflater.inflate(R.layout.text_translator_layout, container, false)
 
         //view.findViewById<Button>(R.id.gallery_open).setOnClickListener { Navigation.findNavController(view).navigate(R.id.action_homeFragment_to_emptyFragment) }
         return view

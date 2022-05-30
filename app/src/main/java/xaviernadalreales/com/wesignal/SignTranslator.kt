@@ -2,6 +2,7 @@ package xaviernadalreales.com.wesignal
 
 import android.Manifest
 import android.content.ContentValues
+import android.content.Intent
 import android.content.pm.PackageManager
 import android.os.Build
 import android.os.Bundle
@@ -20,6 +21,7 @@ import androidx.core.content.ContextCompat
 import androidx.core.content.PermissionChecker
 import androidx.fragment.app.FragmentManager
 import androidx.fragment.app.FragmentTransaction
+import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.google.android.material.bottomsheet.BottomSheetBehavior
 import xaviernadalreales.com.wesignal.databinding.ActivityMainBinding
 import xaviernadalreales.com.wesignal.databinding.OptionsLayoutBinding
@@ -32,7 +34,6 @@ import java.util.concurrent.Executors
 
 
 typealias LumaListener = (luma: Double) -> Unit
-
 
 class SignTranslator : AppCompatActivity() {
     private lateinit var viewBinding: SignTranslatorLayoutBinding
@@ -64,6 +65,8 @@ class SignTranslator : AppCompatActivity() {
         viewBinding.videoCaptureButton.setOnClickListener { captureVideo() }
 
         cameraExecutor = Executors.newSingleThreadExecutor()
+
+        initBottomMenu()
         initOptionsMenu()
     }
 
@@ -294,6 +297,7 @@ class SignTranslator : AppCompatActivity() {
             image.close()
         }
     }
+
     private fun initOptionsMenu() {
         val optionsMenu: LinearLayout = viewBinding.layoutOptions.optionsMenu
         val bottomSheetBehavior: BottomSheetBehavior<LinearLayout> =
@@ -307,6 +311,30 @@ class SignTranslator : AppCompatActivity() {
             }
         }
 
+        optionsMenu.findViewById<LinearLayout>(R.id.uploadVideo).setOnClickListener {
+            val intent = Intent(this, UploadVideo::class.java)
+            startActivity(intent)
+        }
+        optionsMenu.findViewById<LinearLayout>(R.id.aboutUs).setOnClickListener {
+            val intent = Intent(this, AboutUs::class.java)
+            startActivity(intent)
+        }
+
     }
+
+    private fun initBottomMenu() {
+        val bottomMenu = findViewById<BottomNavigationView>(R.id.bottom_navigation)
+        bottomMenu.setOnItemSelectedListener { item ->
+            when (item.itemId) {
+                R.id.signToText -> {
+                    val intent = Intent(this, TextTranslator::class.java)
+                    startActivity(intent)
+                }
+            }
+            return@setOnItemSelectedListener true
+        }
+    }
+
 }
+
 

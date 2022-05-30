@@ -7,7 +7,7 @@
         android:id="@+id/searchVideoFragment"
         android:name="xaviernadalreales.com.wesignal.SearchVideoFragment"
         android:label="video_search_fragment_layout"
-        tools:layout="@layout/video_search_fragment_layout" >
+        tools:layout="@layout/text_translator_layout" >
         <action
             android:id="@+id/action_searchVideoFragment_to_aboutUsFragment"
             app:destination="@id/aboutUsFragment" />
